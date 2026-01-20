@@ -1,5 +1,5 @@
-import 'package:ecommerceapp/screens/create%20account_screen.dart';
 import 'package:ecommerceapp/screens/start_screen.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Shoppe UI',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.white)),
-      home: Createaccount_Screen(),
+      home: StartScreen(),
     );
   }
 }

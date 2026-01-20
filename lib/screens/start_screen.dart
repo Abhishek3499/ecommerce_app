@@ -1,3 +1,5 @@
+import 'package:ecommerceapp/screens/auth/Login_screen.dart';
+import 'package:ecommerceapp/screens/auth/create%20account_screen.dart';
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
@@ -70,7 +72,14 @@ class StartScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(14),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Createaccount_Screen(),
+                      ),
+                    );
+                  },
                   child: Text(
                     "Let's get started",
                     style: TextStyle(
@@ -95,10 +104,23 @@ class StartScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(width: 6),
-                  CircleAvatar(
-                    radius: 14,
-                    backgroundColor: Color(0xFF004CFF),
-                    child: Icon(Icons.arrow_forward, color: Colors.white),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LoginScreen(
+                            email: "guest@shoppe.com",
+                            image: null,
+                          ),
+                        ),
+                      );
+                    },
+                    child: CircleAvatar(
+                      radius: 14,
+                      backgroundColor: Color(0xFF004CFF),
+                      child: Icon(Icons.arrow_forward, color: Colors.white),
+                    ),
                   ),
                 ],
               ),
