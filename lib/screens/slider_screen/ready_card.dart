@@ -1,8 +1,11 @@
-import 'package:flutter/material.dart';
+import 'package:ecommerceapp/models/user_model.dart';
 import 'package:ecommerceapp/screens/home_screen.dart';
+import 'package:flutter/material.dart';
 
 class ReadyCard extends StatelessWidget {
-  const ReadyCard({super.key});
+  final UserModel user;
+
+  const ReadyCard({super.key, required this.user});
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -98,7 +101,9 @@ class ReadyCard extends StatelessWidget {
                     onPressed: () {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (_) => const HomeScreen()),
+                        MaterialPageRoute(
+                          builder: (_) => HomeScreen(user: user),
+                        ),
                       );
                     },
                     child: const Text(

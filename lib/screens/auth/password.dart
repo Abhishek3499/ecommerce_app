@@ -1,7 +1,9 @@
 import 'dart:io';
-import 'package:flutter/material.dart';
-import 'package:ecommerceapp/widgets/background color/passwordbg.dart';
+
+import 'package:ecommerceapp/models/user_model.dart';
 import 'package:ecommerceapp/screens/slider_screen/onboarding_screen.dart';
+import 'package:ecommerceapp/widgets/background color/passwordbg.dart';
+import 'package:flutter/material.dart';
 
 class Password extends StatefulWidget {
   final File? image;
@@ -45,10 +47,17 @@ class _PasswordState extends State<Password> {
                     setState(() {});
                     if (value.length == 4) {
                       _focusNode.unfocus(); // dismiss keyboard
+
+                      final user = UserModel(
+                        name: widget.name,
+                        profileImage:
+                            widget.image?.path ?? UserModel.defaultProfileImage,
+                      );
+
                       Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => const OnboardingScreen(),
+                          builder: (_) => OnboardingScreen(user: user),
                         ),
                       );
                     }

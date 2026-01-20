@@ -1,7 +1,10 @@
+import 'package:ecommerceapp/models/user_model.dart';
 import 'package:flutter/material.dart';
 
 class HelloCard extends StatelessWidget {
-  const HelloCard({super.key});
+  final UserModel user;
+
+  const HelloCard({super.key, required this.user});
   @override
   Widget build(BuildContext context) {
     return Stack(

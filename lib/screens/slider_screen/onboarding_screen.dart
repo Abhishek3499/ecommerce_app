@@ -1,9 +1,13 @@
+import 'package:ecommerceapp/models/user_model.dart';
 import 'package:flutter/material.dart';
+
 import 'hello_card.dart';
 import 'ready_card.dart';
 
 class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({super.key});
+  final UserModel user;
+
+  const OnboardingScreen({super.key, required this.user});
 
   @override
   State<OnboardingScreen> createState() => _OnboardingScreenState();
@@ -25,7 +29,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 currentIndex = index;
               });
             },
-            children: const [HelloCard(), ReadyCard()],
+            children: [
+              HelloCard(user: widget.user),
+              ReadyCard(user: widget.user),
+            ],
           ),
 
           // 🔹 DOTS INDICATOR
