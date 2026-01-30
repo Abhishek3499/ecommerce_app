@@ -57,12 +57,20 @@ flutter:
   uses-material-design: true
 
   assets:
+    - assets/media/
     - assets/start_screen_logo/
     - assets/second_screen_logo/
     - assets/camera_upload/
     - assets/login_screen/
     - assets/password_screen/
     - assets/hello_card/
+    - assets/new_items/
+    - assets/most_popular/
+    - assets/categories/
+    - assets/flash_sales/
+    - assets/Top_products/
+    - assets/just_for_you/
+    - assets/big_sales_banner/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
